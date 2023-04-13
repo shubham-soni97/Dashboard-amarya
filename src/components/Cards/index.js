@@ -1,7 +1,7 @@
 import React from 'react'
 import BasicCard from './BasicCard'
 // import { Box } from '@mui/material'
-// import './index.css'
+import './index.css'
 import SoftBox from 'components/SoftBox'
 import { Box } from '@mui/material'
 import card from 'assets/theme/components/card'
@@ -21,50 +21,65 @@ export const Cards = () => {
     // } 
     const tittle = ["Casual leave", "Holidays this year", "Sick leave balance"]
     const days = [10, 15, 5];
-    const color = ["linear-gradient(195deg, rgb(73, 163, 241), rgb(26, 115, 232))",
+    const color = ["black",
         "linear-gradient(195deg, rgb(102, 187, 106), rgb(67, 160, 71))",
         "linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25))"]
-    const image1= "https://i.imgur.com/ZAts69f.png"
+    const image1 = "https://i.imgur.com/ZAts69f.png"
     return (
         <div>
-            <SoftBox >
-                <Box container sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
             
+                <Box container sx={{
+                    flexWrap:"wrap",
+                    maxWidth:"100%",
+                    display: "flex",
+                    justifyContent: "space-evenly",
+
 
                 }}>
-                    <Box   sx={{ background:color[0], display: "inline-block", borderRadius: "1rem" }} item xs={12} sm={6} xl={3}>
+                    <Box className='card' sx={{ borderRadius: "1rem",width:"18rem" }} item xs={12} sm={6} xl={3}>
 
 
 
-                        <div className="waves">
-                            <div className="wave" id="wave1"></div>
-                            <div className="wave" id="wave2"></div>
-                            <div className="wave" id="wave3"></div>
-                            <div className="wave" id="wave4"></div>
+                        <div >
+                            <div className="wave-1 wave" id="wave1" style={{borderBottom:"100px"}}></div>
+                            <div className="wave-1 wave" id="wave3"></div>
+                            <div className="wave-1 wave" id="wave2"></div>
+                            <div className="wave-1 wave" id="wave4"></div>
 
                         </div>
                         <BasicCard
+                          
                             tittle={tittle[0]}
                             days={days[0]}
 
                         />
 
                     </Box>
-                    <Box className='card' item xs={12} sm={6} xl={3} sx={{ display: "inline-block", background: color[1], borderRadius: "1rem" }}>
+                    <Box className='card' item xs={12} sm={6} xl={3} sx={{ borderRadius: "1rem" ,width:"18rem"}}>
+                        <div className="waves">
+                            <div className="wave wave-2" id="wave1"></div>
+                            <div className="wave wave-2" id="wave2"></div>
+                            <div className="wave wave-2" id="wave3"></div>
+                            <div className="wave wave-2" id="wave4"></div>
 
+                        </div>
                         <BasicCard tittle={tittle[1]} days={days[1]} />
 
                     </Box>
-                    <Box item xs={12} sm={6} xl={3} sx={{ display: "inline-block", background: color[2], borderRadius: "1rem" }}>
+                    <Box className='card' item xs={12} sm={6} xl={3} sx={{   borderRadius: "1rem", width:"18rem" }}>
+                        <div className="waves">
+                            <div className="wave wave-3" id="wave1"></div>
+                            <div className="wave wave-3" id="wave2"></div>
+                            <div className="wave wave-3" id="wave3"></div>
+                            <div className="wave wave-3" id="wave4"></div>
 
+                        </div>
                         <BasicCard tittle={tittle[2]} days={days[2]} />
 
                     </Box>
 
                 </Box>
-            </SoftBox>
+            
         </div>
     )
 }

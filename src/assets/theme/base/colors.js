@@ -31,6 +31,7 @@ const colors = {
 
   transparent: {
     main: "transparent",
+    other:"#e3f2fd"
   },
 
   white: {

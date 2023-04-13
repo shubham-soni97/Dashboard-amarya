@@ -36,12 +36,14 @@ Coded by www.creative-tim.com
 */
 
 // Soft UI Dashboard React layouts
-import Dashboard from "layouts/dashboard";
 import Tables from "layouts/tables";
+import Dashboard from "layouts/dashboard";
 import Billing from "layouts/billing";
-import VirtualReality from "layouts/virtual-reality";
+// import personaldetails from "layouts/personaldetails";
+
 import RTL from "layouts/rtl";
 import Profile from "layouts/profile";
+import Personaldetails from "layouts/personaldetails";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
 
@@ -54,6 +56,8 @@ import SpaceShip from "examples/Icons/SpaceShip";
 import CustomerSupport from "examples/Icons/CustomerSupport";
 import CreditCard from "examples/Icons/CreditCard";
 import Cube from "examples/Icons/Cube";
+
+import Leave from "layouts/Leave";
 
 const routes = [
   {
@@ -86,19 +90,19 @@ const routes = [
   {
     type: "collapse",
     name: "Leave",
-    key: "virtual-reality",
+    key: "Leave",
     route: "/leave",
     icon: <Cube size="12px" />,
-    component: <VirtualReality />,
+    component: <Leave/>,
     noCollapse: true,
   },
   {
     type: "collapse",
-    name: "Tickets",
+    name: "Personal Details",
     key: "rtl",
-    route: "/tickets",
+    route: "/personaldetails",
     icon: <Settings size="12px" />,
-    component: <RTL />,
+    component: <Personaldetails/> ,
     noCollapse: true,
   },
   { type: "title", title: "Account Pages", key: "account-pages" },

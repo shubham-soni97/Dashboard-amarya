@@ -13,7 +13,7 @@ export default function BasicCard(props) {
 
         // </Card>
         <Box sx={{
-            width: "18rem",
+            
             height: "10rem",
             textAlign:"center",
             display:"flex",
@@ -28,14 +28,14 @@ export default function BasicCard(props) {
             {/* <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
          Casual Leave Balance
         </Typography> */}
-            <Typography variant="h5" component="div" color={"lightgray"} >
+            <Typography variant="h5" component="div" fontFamily={"Poppins"}>
                 {props.tittle}
             </Typography>
             &nbsp;
             {/* <Typography sx={{ mb: 1.5 }} color="text.secondary">
           adjective
         </Typography> */}
-            <Typography variant="h5" color={"lightgray"} sx={{fontFamily: "Poppins"}}>
+            <Typography variant="h5"  sx={{fontFamily: "Poppins"}}>
                 {props.days}
             </Typography>
 

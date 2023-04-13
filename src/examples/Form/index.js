@@ -34,35 +34,41 @@ export default function BasicTextFields() {
 
     <>
       <Box
+      Container
         sx={{
-          justifyContent: "space-between",
-          display: 'flex',
-          backgroundColor: "#FFFFFF",
+          height:"auto",
+          
+       
+          backgroundColor: "#e3f2fd",
           padding: "20px",
-          borderRadius: "20px"
-
+          borderRadius: "20px",
         }}
       >
-        <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
-          <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly" }}>
-            <Grid item xs={12} sm={6}>
+        {/* style={{ display: "flex", flexDirection: "column", width: "100%", fontFamily:"Poppins"}} */}
+        {/* style={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly" }} */}
+        <Box sx={{ justifyContent:"space-evenly", display: "flex", flexDirection: "column", width: "100%", fontFamily:"Poppins"}}>
+          <Box sx={{display: "flex", flexDirection: "row", justifyContent: "space-evenly", flexWrap:'wrap'}} >
+            <Box sx={{width:"auto", maxWidth:"100%"}}>
               <Typography>From Date:</Typography>
-              <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DatePicker variant="static"/>
+              &nbsp;
+              <LocalizationProvider dateAdapter={AdapterDayjs} >
+                <DatePicker sx={{maxWidth:"100%"}} variant="static"/>
               </LocalizationProvider>
-            </Grid>
+              </Box>
 
-            <Grid item xs={12} sm={6}>
+            <Box sx={{width:"auto", maxWidth:"100%"}}>
               <Typography>To Date:</Typography>
+              &nbsp;
               <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DatePicker />
+                <DatePicker sx={{maxWidth:"100%"}} />
               </LocalizationProvider>
-            </Grid>
+            </Box>
 
-            <Grid item xs={12} sm={6}>
+            <Box sx={{width:"auto", maxWidth:"100%"}} >
               <Typography>Leave Type</Typography>
-              <FormControl sx={{ width: "16rem" }}>
-                <Select
+                  
+                 <Select
+                
                   value={age}
                   onChange={handleChange}
                   displayEmpty
@@ -75,54 +81,40 @@ export default function BasicTextFields() {
                   <MenuItem value={20}>Casual Leave (CL)</MenuItem>
                   <MenuItem value={30}>Earned Leave (EL)</MenuItem>
                 </Select>
-              </FormControl>
-            </Grid>
-          </div>
-          <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop:"50px", padding:"0px, 60px" }}>
-            <Grid item xs={12} sm={6} sx={{ marginLeft:""}}>
+                </Box>
+           
+          </Box>
+          <Box style={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly", alignItems: "center", marginTop:"50px" , flexWrap:"wrap" }}>
+            <Box sx={{display:"grid"}}>
+
               <Typography sx={{ fontFamily: "Poppins" }}>Reason</Typography>
-              {/* <TextField, 
-        helperText=" "
-        id="demo-helper-text-aligned-no-helper"
-        inputProps={{ maxLength: 200 , maxRows:10}}
-      /> */}
+         
               <TextareaAutosize
-                placeholder=""
+
+                placeholder="Enter your text here!"
                 minRows="5"
                 style={{
-                 
-                  width: "300px",
+                  // width:"200px",
+                  height:"auto",
                   borderRadius: "10px",
                   resize: "none",
                   padding: "10px",
                   outline: "none"
                 }}
                 
-              />
-            </Grid>
-            <Grid sx={{ marginTop: "30px" }}>
-              <Stack spacing={10} direction="">
+                />
+              </Box>
+            
+            
+              <Stack spacing={10} direction="" sx={{maxWidth:"100%"}}>
                 {/* <Button variant="text">Text</Button> */}
-                <Button variant="contained">Submit</Button>
+                <Button  variant="contained">Submit</Button>
                 {/* <Button variant="outlined">Outlined</Button> */}
               </Stack>
-            </Grid>
-          </div>
-        </div>
+          
+          </Box>
+        </Box>
       </ Box>
-      {/* <Box
-        sx={{
-          justifyContent: "space-between",
-          display: 'flex',
-          backgroundColor: "#FFFFFF",
-          padding: "20px",
-          borderBottomLeftRadius: "20px",
-          borderBottomRightRadius: "20px"
-
-        }}
-      >
-        
-      </Box> */}
     </>
 
   );
